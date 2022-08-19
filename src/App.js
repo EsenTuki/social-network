@@ -1,5 +1,5 @@
 import React from 'react'
-import Header from './components/Header/Header'
+import HeaderContainer from './components/Header/HeaderContainer'
 import Navbar from './components/Navbar/Navbar'
 import './App.css'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
@@ -11,7 +11,7 @@ function App(props) {
   return (
     <BrowserRouter>
       <div className='app-wrapper'>
-        <Header />
+        <HeaderContainer />
         <Navbar />
         <div className='app-wrapper-content'>
           <Routes>
