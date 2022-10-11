@@ -5,6 +5,7 @@ import { Input } from "../common/FormControls/FormsControls"
 import { connect } from "react-redux"
 import { login } from "../../redux/authReducer"
 import { Navigate } from "react-router-dom"
+import style from '../common/FormControls/FormsControls.module.css'
 
 const LoginForm = (props) => {
     return (
@@ -22,6 +23,9 @@ const LoginForm = (props) => {
             <div>
                 <Field type="checkbox" name={"rememberMe"} component={Input} /> remember me
             </div>
+            {props.error && <div className={style.formSummaryError}>
+                {props.error}
+            </div>}
             <div>
                 <button>Login</button>
             </div>
@@ -36,8 +40,8 @@ const Login = (props) => {
         props.login(formData.email, formData.password, formData.rememberMe)
     }
 
-    if(props.isAuth){
-        return <Navigate to='/profile'/>
+    if (props.isAuth) {
+        return <Navigate to='/profile' />
     }
 
     return <div>
@@ -46,5 +50,5 @@ const Login = (props) => {
     </div>
 }
 
-const mapStateToProps = (state) => ({isAuth: state.auth.isAuth})
-export default connect(mapStateToProps, {login})(Login)
+const mapStateToProps = (state) => ({ isAuth: state.auth.isAuth })
+export default connect(mapStateToProps, { login })(Login)
