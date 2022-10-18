@@ -28,7 +28,7 @@ class App extends Component {
           <Navbar />
           <div className='app-wrapper-content'>
             <Routes>
-              <Route path='/profile/:userId?' element={<ProfileContainer />} />
+              <Route path='/profile/:userId' element={<ProfileContainer />} />
               <Route path='/dialogs/*' element={<DialogsContainer />} />
               {/* <Route path='/profile/:userId' element={<ProfileContainer store={props.store} />} />
               <Route path='/dialogs/*' element={<DialogsContainer store={props.store} />} /> */}
