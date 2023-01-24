@@ -4,20 +4,17 @@ import Loader from '../../common/loader/Loader'
 import ProfileStatus from './ProfileStatus'
 import ProfileStatusWithHooks from './ProfileStatusWithHooks'
 
-const ProfileInfo = (props) => {
-    if (!props.profile){
+const ProfileInfo = ({ profile, status, updateStatus }) => {
+    if (!profile) {
         return <Loader />
     }
     return (
         <div>
-            {/* <div className={s.avatar}>
-                <img src='https://helpx.adobe.com/content/dam/help/en/photoshop/using/convert-color-image-black-white/jcr_content/main-pars/before_and_after/image-before/Landscape-Color.jpg' />
-            </div> */}
             <div className={s.descriptionBlock}>
-                <img src={props.profile.photos.small}/> <br/>
-                About: {props.profile.aboutMe} <br/>
-                Name: {props.profile.fullName}
-                <ProfileStatusWithHooks status={props.status} updateStatus={props.updateStatus}/>
+                <img src={profile.photos.small} /> <br />
+                About: {profile.aboutMe} <br />
+                Name: {profile.fullName}
+                <ProfileStatusWithHooks status={status} updateStatus={updateStatus} />
             </div>
         </div>
     )

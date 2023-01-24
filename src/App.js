@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import HeaderContainer from './components/Header/HeaderContainer'
 import Navbar from './components/Navbar/Navbar'
 import './App.css'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom'
 import DialogsContainer from './components/Dialogs/DialogsContainer'
 import UsersContainer from './components/Users/UsersContainer'
 import ProfileContainer from './components/Profile/ProfileContainer'
@@ -22,7 +22,6 @@ class App extends Component {
     }
 
     return (
-      <BrowserRouter>
         <div className='app-wrapper'>
           <HeaderContainer />
           <Navbar />
@@ -37,7 +36,6 @@ class App extends Component {
             </Routes>
           </div>
         </div>
-      </BrowserRouter>
     );
   }
 }
